@@ -7,7 +7,16 @@ cd install_vim_tmp
 # 下载安装  ncurses 库
 rm -rf ncurses-6.1.tar.gz
 rm -rf ncurses-6.1
-wget -c --limit-rate=30m 10.26.21.144:6200/http_files/vim_env/ncurses-6.1.tar.gz -O  ncurses-6.1.tar.gz
+rm -rf vim.tar
+rm -rf ./vim
+rm -rf huzhu_vim.zip
+rm -rf ./.vim
+rm -rf vim_src.zip
+rm -rf ./vim_src
+
+git clone https://github.com/HuStanding/vim8
+mv vim8/* ./
+
 tar -xzvf ncurses-6.1.tar.gz
 mkdir -p ~/.local
 cd ncurses-6.1
@@ -18,16 +27,6 @@ make install
 cd ..
 
 # 下载安装 vim8
-rm -rf vim.tar
-rm -rf ./vim
-rm -rf huzhu_vim.zip
-rm -rf ./.vim
-rm -rf vim_src.zip
-rm -rf ./vim_src
-
-git clone https://github.com/HuStanding/vim8
-cd vim8
-
 tar -xvf vim.tar
 cd ./vim
 ./configure \
