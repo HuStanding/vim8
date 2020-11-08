@@ -1,7 +1,7 @@
 set -e
 
 # 创建临时文件夹
-mkdir  install_vim_tmp
+mkdir install_vim_tmp
 cd install_vim_tmp
 
 # 下载安装  ncurses 库
@@ -20,7 +20,14 @@ cd ..
 # 下载安装 vim8
 rm -rf vim.tar
 rm -rf ./vim
-wget -c --limit-rate=30m 10.26.21.144:6200/http_files/vim_env/vim.tar -O  vim.tar
+rm -rf huzhu_vim.zip
+rm -rf ./.vim
+rm -rf vim_src.zip
+rm -rf ./vim_src
+
+git clone https://github.com/HuStanding/vim8
+cd vim8
+
 tar -xvf vim.tar
 cd ./vim
 ./configure \
@@ -56,17 +63,11 @@ if [ -f ~/.bashrc ]; then
 fi
 
 # .vim 插件文件夹
-rm -rf suwenbo_vim.zip
-rm -rf ./.vim
-wget -c --limit-rate=30m 10.26.21.144:6200/http_files/vim_env/suwenbo_vim.zip -O  suwenbo_vim.zip
-unzip suwenbo_vim.zip
+unzip huzhu_vim.zip
 rm -rf ~/.vim
 cp -r ./.vim ~/
 
 # .vim 文件夹
-rm -rf vim_src.zip
-rm -rf ./vim_src
-wget -c --limit-rate=30m 10.26.21.144:6200/http_files/vim_env/vim_src.zip -O  vim_src.zip
 unzip vim_src.zip
 
 cp ./vim_src/.vimrc ~/
