@@ -7,7 +7,7 @@ cd install_vim_tmp
 # 下载安装  ncurses 库
 rm -rf ncurses-6.1.tar.gz
 rm -rf ncurses-6.1
-wget -c --limit-rate=30m https://github.com/HuStanding/vim8/blob/master/ncurses-6.1.tar.gz -O  ncurses-6.1.tar.gz
+wget -c --limit-rate=30m https://raw.githubusercontent.com/HuStanding/vim8/master/ncurses-6.1.tar.gz -O  ncurses-6.1.tar.gz
 
 tar -xzvf ncurses-6.1.tar.gz
 mkdir -p ~/.local
