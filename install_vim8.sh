@@ -12,7 +12,7 @@ wget -c --limit-rate=30m https://raw.githubusercontent.com/HuStanding/vim8/maste
 tar -xzvf ncurses-6.1.tar.gz
 mkdir -p ~/.local
 cd ncurses-6.1
-./configure --prefix= /home/"$USER"/.local/dependency/ncurses6.1
+./configure --prefix=/home/"$USER"/.local/dependency/ncurses6.1
 make
 make install
 
