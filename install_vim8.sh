@@ -12,7 +12,7 @@ wget -c --limit-rate=30m https://raw.githubusercontent.com/HuStanding/vim8/maste
 tar -xzvf ncurses-6.1.tar.gz
 mkdir -p ~/.local
 cd ncurses-6.1
-./configure --prefix=/${HOME}/"$USER"/.local/dependency/ncurses6.1
+./configure --prefix=${HOME}/.local/dependency/ncurses6.1
 make
 make install
 
@@ -21,7 +21,7 @@ cd ..
 # 下载安装 vim8
 rm -rf vim.tar
 rm -rf ./vim
-wget -c --limit-rate=30m https://raw.githubusercontent.com/HuStanding/vim8/master/vim.tar -O vim.tar 
+wget -c --limit-rate=30m  https://github.com/HuStanding/vim8/blob/master/vim.tar?raw=true -O vim.tar 
 tar -xvf vim.tar
 cd ./vim
 ./configure \
@@ -32,7 +32,7 @@ cd ./vim
 --enable-luainterp \
 --enable-gui=gtk2 \
 --enable-cscope \
---prefix=/${HOME}/"$USER"/.local/software/vim8 CFLAGS="-I/${HOME}/"$USER"/.local/dependency/ncurses6.1/include" LDFLAGS="-L/${HOME}/"$USER"/.local/dependency/ncurses6.1/lib"
+--prefix=${HOME}/.local/software/vim8 CFLAGS="-I${HOME}/.local/dependency/ncurses6.1/include" LDFLAGS="-L${HOME}/.local/dependency/ncurses6.1/lib"
 
 make
 make install
@@ -59,7 +59,7 @@ fi
 # .vim 插件文件夹
 rm -rf huzhu_vim.zip
 rm -rf ./.vim
-wget -c --limit-rate=30m https://raw.githubusercontent.com/HuStanding/vim8/master/huzhu_vim.zip -O huzhu_vim.zip 
+wget -c --limit-rate=30m https://github.com/HuStanding/vim8/blob/master/huzhu_vim.zip?raw=true -O huzhu_vim.zip 
 unzip huzhu_vim.zip
 rm -rf ~/.vim
 cp -r ./.vim ~/
@@ -67,7 +67,7 @@ cp -r ./.vim ~/
 # .vim 文件夹
 rm -rf vim_src.zip
 rm -rf ./vim_src
-wget -c --limit-rate=30m https://raw.githubusercontent.com/HuStanding/vim8/master/vim_src.zip -O vim_src.zip 
+wget -c --limit-rate=30m https://github.com/HuStanding/vim8/blob/master/vim_src.zip?raw=true -O vim_src.zip 
 
 unzip vim_src.zip
 
